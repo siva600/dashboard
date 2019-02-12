@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+{% block content %}
+
+
+    <div class="container">
+      <h2>User Posts</h2>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>JOBDATE</th>
+            <th>SERVICE_NAME</th>
+              <th>ARTIFACT</th>
+          </tr>
+        </thead>
+        <tbody>
+
+
+        {% for item in posts %}
+          <tr>
+            <td><a href= "{{ url_for('history') }}" style="cursor:pointer">{{ item.SERVICE_NAME }}</a></td>
+
+            <td>{{ item.JOBDATE }}</td>
+            <td>{{ item.ARTIFACT }}</td>
+              {% endfor %}
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+
+
+{% endblock content %}
+
